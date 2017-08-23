@@ -146,6 +146,7 @@
     <Compile Include="Models\TipoContrato.cs" />
     <Compile Include="Models\TipoIdentificacion.cs" />
     <Compile Include="Models\VentaSoftwareContext.cs" />
+    <Compile Include="Models\VentaSoftwareInitializer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

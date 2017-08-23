@@ -7,7 +7,7 @@ namespace VentaSoftware.Models
 {
     public class Cliente
     {
-        public string Id_cliente { get; set; }
+        public int Id_cliente { get; set; }
         public int Cod_cliente { get; set; }
         public string Nombre { get; set; }
         public string Apellido { get; set; }
@@ -20,6 +20,9 @@ namespace VentaSoftware.Models
         public string Cod_Identif { get; set; }
         public int Tip_Identif { get; set; }
         public bool Estado { get; set; }
+        public string Usuario { get; set; }
+        public string Contrasena { get; set; }
+
 
         public virtual TipoCliente TipoCliente { get; set; }
         public virtual TipoIdentificacion TipoIdentificacion { get; set; }
