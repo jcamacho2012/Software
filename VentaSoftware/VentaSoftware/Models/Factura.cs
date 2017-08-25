@@ -18,6 +18,10 @@ namespace VentaSoftware.Models
         public float Ice { get; set; }
         public float TotalPagar { get; set; }
         public string FormaPago { get; set; }
+        public string NombreCC { get; set; }
+        public string NumeroCC { get; set; }
+        public string CCV { get; set; }
+        public DateTime FechaExpira { get; set; }
         public bool Estado { get; set; }
 
         public virtual Cliente Cliente { get; set; }

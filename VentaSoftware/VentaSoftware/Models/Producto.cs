@@ -20,8 +20,8 @@ namespace VentaSoftware.Models
         public int CapMaxBase { get; set; }
         public bool Estado { get; set; }
 
-        public virtual ICollection<Contrato> Contratos { get; set; }
-        public virtual ICollection<CarritoCompra> CarritoCompras { get; set; }
+        public virtual ICollection<Modalidad> Modalidades { get; set; }
+        public virtual ICollection<DetalleCarrito> DetalleCarritos { get; set; }
         public virtual ICollection<DetalleFactura> DetalleFacturas { get; set; }
     }
 }

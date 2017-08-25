@@ -126,25 +126,40 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="scripts\ai.0.22.9-build00167.js" />
     <Content Include="scripts\ai.0.22.9-build00167.min.js" />
+    <Content Include="scripts\bootstrap.js" />
+    <Content Include="scripts\bootstrap.min.js" />
+    <None Include="scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="scripts\jquery-1.10.2.js" />
+    <Content Include="scripts\jquery-1.10.2.min.js" />
+    <Content Include="scripts\modernizr-2.6.2.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CarritoCompraController.cs" />
+    <Compile Include="Controllers\ClienteController.cs" />
+    <Compile Include="Controllers\DetalleCarritoController.cs" />
+    <Compile Include="Controllers\DetalleFacturaController.cs" />
+    <Compile Include="Controllers\FacturaController.cs" />
+    <Compile Include="Controllers\ModalidadController.cs" />
+    <Compile Include="Controllers\ProductoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\CarritoCompra.cs" />
     <Compile Include="Models\Cliente.cs" />
-    <Compile Include="Models\Contrato.cs" />
+    <Compile Include="Models\Modalidad.cs" />
+    <Compile Include="Models\DetalleCarrito.cs" />
     <Compile Include="Models\DetalleFactura.cs" />
     <Compile Include="Models\Factura.cs" />
     <Compile Include="Models\Producto.cs" />
-    <Compile Include="Models\TipoCliente.cs" />
-    <Compile Include="Models\TipoContrato.cs" />
-    <Compile Include="Models\TipoIdentificacion.cs" />
     <Compile Include="Models\VentaSoftwareContext.cs" />
     <Compile Include="Models\VentaSoftwareInitializer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -156,6 +171,13 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Service References\Application Insights\ConnectedService.json" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Producto\Index.cshtml" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="scripts\jquery-1.10.2.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -165,7 +187,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
+    <Folder Include="Views\CarritoCompra\" />
+    <Folder Include="Views\Cliente\" />
+    <Folder Include="Views\DetalleCarrito\" />
+    <Folder Include="Views\DetalleFactura\" />
+    <Folder Include="Views\Factura\" />
+    <Folder Include="Views\Modalidad\" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
