@@ -19,6 +19,7 @@ namespace VentaSoftware.Controllers
         public ActionResult CrearProducto()
         {
             Producto nuevoProducto = new Producto();
+            nuevoProducto.Estado = true;
             return View("CrearProducto",nuevoProducto);
         }
 

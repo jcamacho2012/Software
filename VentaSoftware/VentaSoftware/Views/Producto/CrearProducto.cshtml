@@ -1,0 +1,91 @@
+﻿@model VentaSoftware.Models.Producto
+@{
+    ViewBag.Title = "CrearProducto";
+}
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Crear Producto</title>
+</head>
+<body>
+    <div>
+        <h2>Datos Producto</h2>
+
+        @using (Html.BeginForm("CrearProducto", "Producto", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            @Html.ValidationSummary(true)
+
+            <p>
+                @Html.LabelFor(model => model.Nombre)
+                @Html.EditorFor(model => model.Nombre)
+                @Html.ValidationMessageFor(model => model.Nombre)
+            </p>
+            <p>
+                @Html.LabelFor(model => model.Creador)
+                @Html.EditorFor(model => model.Creador)
+                @Html.ValidationMessageFor(model => model.Creador)
+            </p>
+            <p>
+                @Html.LabelFor(model => model.Lenguaje)
+                @Html.EditorFor(model => model.Lenguaje)
+                @Html.ValidationMessageFor(model => model.Lenguaje)
+            </p>
+            <p>
+                @Html.LabelFor(model => model.BaseDatos)
+                @Html.EditorFor(model => model.BaseDatos)
+                @Html.ValidationMessageFor(model => model.BaseDatos)
+            </p>
+            <p>
+                @Html.LabelFor(model => model.Area)
+                @Html.EditorFor(model => model.Area)
+                @Html.ValidationMessageFor(model => model.Area)
+            </p>
+            <p>
+                @Html.LabelFor(model => model.Funcion)
+                @Html.EditorFor(model => model.Funcion)
+                @Html.ValidationMessageFor(model => model.Funcion)
+            </p>
+            <p>
+                @Html.LabelFor(model => model.CapMaxConexiones)
+                @Html.EditorFor(model => model.CapMaxConexiones)
+                @Html.ValidationMessageFor(model => model.CapMaxConexiones)
+            </p>
+            <p>
+                @Html.LabelFor(model => model.Detalle)
+                @Html.EditorFor(model => model.Detalle)
+                @Html.ValidationMessageFor(model => model.Detalle)
+            </p>
+            <p>
+                @Html.CheckBox("Usuario")                
+                @Html.Label("Usuario")
+                <input type="text" />                              
+            </p>
+            <p>
+                @Html.CheckBox("Institucional")
+                @Html.Label("Institucional")
+                <input type="text" />
+            </p>
+            <p>
+                @Html.CheckBox("Mensual")
+                @Html.Label("Mensual")
+                <input type="text" />
+            </p>
+            <p>
+                @Html.CheckBox("Anual")
+                @Html.Label("Anual")
+                <input type="text" />
+            </p>
+            <p>
+                <input type="submit" value="Registrar Producto" />
+               @* @Html.ActionLink("Back to List", "Index")*@
+            </p>
+        }
+    </div>
+</body>
+</html>
+
+

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.ComponentModel.DataAnnotations;
 
 namespace VentaSoftware.Models
 {
@@ -15,6 +16,8 @@ namespace VentaSoftware.Models
         public string Area { get; set; }
         public float Costo { get; set; }
         public string Funcion { get; set; }
+
+        [DataType(DataType.MultilineText)]
         public string Detalle { get; set; }
         public int CapMaxConexiones { get; set; }
         public int CapMaxBase { get; set; }

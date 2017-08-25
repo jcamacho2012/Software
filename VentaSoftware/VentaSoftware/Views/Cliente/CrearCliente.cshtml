@@ -1,0 +1,85 @@
+﻿@model VentaSoftware.Models.Cliente
+@{
+    ViewBag.Title = "CrearCliente";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Crear Cliente</title>
+</head>
+<body>
+    <div>
+        <h2>Datos del Cliente</h2>
+
+        @using (Html.BeginForm("CrearCliente", "Cliente", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            @Html.ValidationSummary(true)
+
+            <p>
+                @Html.LabelFor(model => model.Nombre)
+                @Html.EditorFor(model => model.Nombre)
+                @Html.ValidationMessageFor(model => model.Nombre)
+            </p>
+            <p>
+                @Html.LabelFor(model => model.Apellido)
+                @Html.EditorFor(model => model.Apellido)
+                @Html.ValidationMessageFor(model => model.Apellido)
+            </p>
+            <p>
+                @Html.Label("Tipo Identificación")
+                <select>
+                    <option value="RUC">RUC</option>
+                    <option value="CEDULA">CEDULA</option>
+                </select>
+            </p>
+            <p>
+                @Html.LabelFor(model => model.Tip_Identif)
+                @Html.EditorFor(model => model.Tip_Identif)
+                @Html.ValidationMessageFor(model => model.Tip_Identif)
+            </p>
+            <p>
+                @Html.LabelFor(model => model.Direccion)
+                @Html.EditorFor(model => model.Direccion)
+                @Html.ValidationMessageFor(model => model.Direccion)
+            </p>
+            <p>
+                @Html.LabelFor(model => model.Mail)
+                @Html.EditorFor(model => model.Mail)
+                @Html.ValidationMessageFor(model => model.Mail)
+            </p>
+            <p>
+                @Html.LabelFor(model => model.Telefono)
+                @Html.EditorFor(model => model.Telefono)
+                @Html.ValidationMessageFor(model => model.Telefono)
+            </p>
+            <p>
+                @Html.LabelFor(model => model.Fecha_nac)
+                @Html.EditorFor(model => model.Fecha_nac)
+                @Html.ValidationMessageFor(model => model.Fecha_nac)
+            </p>
+            <p>                
+                @Html.Label("Usuario")
+                <input type="text" />
+            </p>
+            <p>                
+                @Html.Label("Contraseña")
+                <input type="password" />
+            </p>
+            <p>                
+                @Html.Label("Repetir Contraseña")
+                <input type="password" />
+            </p>            
+            <p>
+                <input type="submit" value="Crear Usuario" />
+                @* @Html.ActionLink("Back to List", "Index")*@
+            </p>
+        }
+    </div>
+</body>
+</html>
+
+
+

@@ -178,6 +178,8 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Producto\CrearProducto.cshtml" />
+    <Content Include="Views\Cliente\CrearCliente.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -188,7 +190,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\CarritoCompra\" />
-    <Folder Include="Views\Cliente\" />
     <Folder Include="Views\DetalleCarrito\" />
     <Folder Include="Views\DetalleFactura\" />
     <Folder Include="Views\Factura\" />

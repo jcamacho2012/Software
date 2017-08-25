@@ -19,6 +19,7 @@ namespace VentaSoftware.Controllers
         public ActionResult CrearCliente()
         {
             Cliente nuevoCliente = new Cliente();
+            nuevoCliente.Estado = true;
             return View("CrearCliente", nuevoCliente);
         }
 

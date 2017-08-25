@@ -16,7 +16,7 @@ namespace VentaSoftware
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Cliente", action = "CrearCliente", id = UrlParameter.Optional }
             );
         }
     }
