@@ -9,16 +9,21 @@ namespace VentaSoftware.Models
     public class Producto
     {
         public int Id_producto { get; set; }
+        [Required]
         public string Nombre { get; set; }
+        [Required]
         public string Creador { get; set; }
+        [Required]
         public string Lenguaje { get; set; }
+        [Required, Display(Name ="Base de Datos")]        
         public string BaseDatos { get; set; }
+        [Required]
         public string Area { get; set; }
-        public float Costo { get; set; }
+        [Required]
         public string Funcion { get; set; }
-
-        [DataType(DataType.MultilineText)]
+        [Required, DataType(DataType.MultilineText)]
         public string Detalle { get; set; }
+        [Display(Name = "Conexiones Maximas")]
         public int CapMaxConexiones { get; set; }
         public int CapMaxBase { get; set; }
         public bool Estado { get; set; }

@@ -10,37 +10,17 @@ namespace VentaSoftware.Models
     {
         protected override void Seed(VentaSoftwareContext context)
         {
-            base.Seed(context);          
+            base.Seed(context);
             //Crea registros de productos
-            var productos = LlenarProducto();
-            productos.ForEach(s=>context.Productos.Add(s));
-            context.SaveChanges();
-
-            //Crea registros de contratos
-            var modalidades = LlenarModalidades();
-            modalidades.ForEach(s => context.Modalidades.Add(s));
-            context.SaveChanges();
-
-            //Crea registros de clientes
-            var clientes = LlenarClientes();
-            clientes.ForEach(s => context.Clientes.Add(s));
-            context.SaveChanges();
-
-        }
-
-        public List<Producto> LlenarProducto()
-        {
             var productos = new List<Producto>
             {
                 new Producto
                 {
-                    Id_producto=1,
                     Nombre="Kasperky",
                     Creador="Lab Kasperky",
                     Lenguaje="NA",
                     BaseDatos="NA",
                     Area="Antivirus",
-                    Costo=15,
                     Funcion="Proteccion de equipos informaticos",
                     Detalle="Antivirus 2017",
                     CapMaxConexiones=0,
@@ -49,84 +29,82 @@ namespace VentaSoftware.Models
                 },
                 new Producto
                 {
-                    Id_producto=2,
                     Nombre="Visual Studio 2017",
                     Creador="Microsoft",
                     Lenguaje="Visual Basic, C#, Asp Net",
                     BaseDatos="NA",
                     Area="Desarrollo",
-                    Costo=10,
                     Funcion="Framework de Desarrollo de Software",
                     Detalle="Programa de desarrollo de software",
                     CapMaxConexiones=0,
                     CapMaxBase=0,
                     Estado=true
                 }
-            };
+            };          
+            productos.ForEach(s => context.Productos.Add(s));
+            context.SaveChanges();
 
-            return productos;
-        }
-
-        public List<Modalidad> LlenarModalidades()
-        {
-            var contratos = new List<Modalidad>
+            //Crea registros de contratos
+            var modalidades = new List<Modalidad>
             {
                 new Modalidad
                 {
-                    Id_Modalidad=1,
                     Id_Producto=1,
                     Detalle="Usuario",
                     TipoModalidad="Compra",
+                    Costo="5",
                     Estado=true
                 },
                 new Modalidad
                 {
-                    Id_Modalidad=2,
                     Id_Producto=1,
                     Detalle="Anual",
                     TipoModalidad="Alquiler",
+                    Costo="10",
                     Estado=true
                 }
             };
+            modalidades.ForEach(s => context.Modalidades.Add(s));
+            context.SaveChanges();
 
-            return contratos;
-        }
-
-        public List<Cliente> LlenarClientes()
-        {
+            //Crea registros de clientes
             var clientes = new List<Cliente>
             {
                 new Cliente
                 {
-                    Id_cliente=1,
-                    Cod_cliente=1,
+                    Cod_cliente=11231,
                     Nombre="Ericka",
                     Apellido="Ramirez",
                     Empresa="NA",
-                    Fecha_nac=DateTime.Today,                
+                    Fecha_nac=DateTime.Today,
+                    Tipo_cliente="asd",
                     Telefono="042345679",
                     Direccion="Samanes 7",
-                    Mail="correo@mail.com",                   
-                    Cod_Identif="0933245678",                    
+                    Mail="correo@mail.com",
+                    Tip_Identif="Cedula",
+                    Cod_Identif="0933245678",
+                    UserID=1,
                     Estado=true
                 },
                 new Cliente
                 {
-                    Id_cliente=2,
-                    Cod_cliente=2,
+                    Cod_cliente=223123,
                     Nombre="Hector",
                     Apellido="Sanchez",
                     Empresa="NA",
-                    Fecha_nac=DateTime.Today,               
+                    Fecha_nac=DateTime.Today,
+                    Tipo_cliente="qweq",
                     Telefono="042225679",
                     Direccion="Alborada",
-                    Mail="correo@mail.com",                  
-                    Cod_Identif="0932342478",                   
+                    Mail="correo@mail.com",
+                    Tip_Identif="Cedula",
+                    Cod_Identif="0932342478",
+                    UserID=2,
                     Estado=true
                 }
             };
-
-            return clientes;
-        }
+            clientes.ForEach(s => context.Clientes.Add(s));
+            context.SaveChanges();
+        }      
     }
 }

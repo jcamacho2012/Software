@@ -30,6 +30,10 @@ namespace VentaSoftware.Controllers
             {
                 return View("CrearCliente", cliente);
             }
+            //genera codigo de cliente
+            Random r = new Random();
+            cliente.Cod_cliente = r.Next(1000,9999);
+
             context.Clientes.Add(cliente);
             context.SaveChanges();
             return RedirectToAction("Index");

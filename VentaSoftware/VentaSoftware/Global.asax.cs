@@ -13,9 +13,10 @@ namespace VentaSoftware
     {
         protected void Application_Start()
         {
+            Database.SetInitializer<VentaSoftwareContext>(new VentaSoftwareInitializer());
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
-            Database.SetInitializer<VentaSoftwareContext>(new VentaSoftwareInitializer());
+            
 
         }
     }
