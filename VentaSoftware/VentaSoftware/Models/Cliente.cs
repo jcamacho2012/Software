@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace VentaSoftware.Models
 {
+    [Table("Tb_Cliente")]
     public class Cliente
     {
+        [Key]
         public int Id_cliente { get; set; }
         public int Cod_cliente { get; set; }
         [Required]

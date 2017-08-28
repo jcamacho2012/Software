@@ -1,0 +1,105 @@
+﻿@model VentaSoftware.Models.Producto
+
+@{
+    ViewBag.Title = "Detalle Software";
+}
+
+<div class="form-group">
+    <div class="row">
+        <div class="col-md-4" style="padding-top:10px">
+            <div class="thumbnail">
+                <label class="caption">@Html.DisplayFor(model => model.Nombre)</label>
+                <div>
+                    <img style="width:100%" alt="@Html.DisplayNameFor(model => model.Nombre)" src="@Url.Action("GetImage", "Producto", new { id = Model.Id_producto })" />
+                    <div class="caption">
+                        <p>@Html.DisplayFor(model => model.Funcion)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8" style="padding-top:10px">
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.Nombre)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Nombre)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Creador)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Creador)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Lenguaje)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Lenguaje)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.BaseDatos)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.BaseDatos)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Area)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Area)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Funcion)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Funcion)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Detalle)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Detalle)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.CapMaxConexiones)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.CapMaxConexiones)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.CapMaxBase)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.CapMaxBase)
+                </dd>
+
+                
+
+            </dl>
+
+        </div>
+        <p>
+            @Html.ActionLink("Regresar", "Index", "Home")
+        </p>
+    </div>
+</div>
+   
+     

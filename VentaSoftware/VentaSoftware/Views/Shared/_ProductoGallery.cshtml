@@ -1,0 +1,19 @@
+﻿@model IEnumerable<VentaSoftware.Models.Producto>
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-md-3" style="padding-top:10px">
+            <div class="thumbnail">
+               <label class="caption">@item.Nombre</label>
+            <div>
+                <img style="width:100%" alt="@Html.DisplayFor(model => item.Nombre)" src="@Url.Action("GetImage", "Producto", new { id = item.Id_producto })" />
+                <div class="caption">
+                    <p>@Html.DisplayFor(model => item.Funcion) <a> | @Html.ActionLink("Ver mas", "MostrarProductoxId", new { id = item.Id_producto }) </a></p>
+                </div>
+                @*<div class="text-center"><a>Ver mas</a></div>*@
+            </div>
+            </div>
+            
+        </div>
+    }
+</div>

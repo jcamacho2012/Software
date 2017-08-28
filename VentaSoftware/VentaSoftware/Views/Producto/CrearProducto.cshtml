@@ -15,74 +15,122 @@
     <div>
         <h2>Datos Producto</h2>
 
-        @using (Html.BeginForm("CrearProducto", "Producto", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        @using (Html.BeginForm("CrearProducto", "Producto", FormMethod.Post, new { enctype = "multipart/form-data" ,@class= "form-inline" }))
         {
             @Html.ValidationSummary(true)
 
-            <p>
-                @Html.LabelFor(model => model.Nombre)
-                @Html.EditorFor(model => model.Nombre)
-                @Html.ValidationMessageFor(model => model.Nombre)
-            </p>
-            <p>
-                @Html.LabelFor(model => model.Creador)
-                @Html.EditorFor(model => model.Creador)
-                @Html.ValidationMessageFor(model => model.Creador)
-            </p>
-            <p>
-                @Html.LabelFor(model => model.Lenguaje)
-                @Html.EditorFor(model => model.Lenguaje)
-                @Html.ValidationMessageFor(model => model.Lenguaje)
-            </p>
-            <p>
-                @Html.LabelFor(model => model.BaseDatos)
-                @Html.EditorFor(model => model.BaseDatos)
-                @Html.ValidationMessageFor(model => model.BaseDatos)
-            </p>
-            <p>
-                @Html.LabelFor(model => model.Area)
-                @Html.EditorFor(model => model.Area)
-                @Html.ValidationMessageFor(model => model.Area)
-            </p>
-            <p>
-                @Html.LabelFor(model => model.Funcion)
-                @Html.EditorFor(model => model.Funcion)
-                @Html.ValidationMessageFor(model => model.Funcion)
-            </p>
-            <p>
-                @Html.LabelFor(model => model.CapMaxConexiones)
-                @Html.EditorFor(model => model.CapMaxConexiones)
-                @Html.ValidationMessageFor(model => model.CapMaxConexiones)
-            </p>
-            <p>
-                @Html.LabelFor(model => model.Detalle)
-                @Html.EditorFor(model => model.Detalle)
-                @Html.ValidationMessageFor(model => model.Detalle)
-            </p>
-            <p>
-                @Html.CheckBox("Usuario")                
-                @Html.Label("Usuario")
-                <input type="text" />                              
-            </p>
-            <p>
-                @Html.CheckBox("Institucional")
-                @Html.Label("Institucional")
-                <input type="text" />
-            </p>
-            <p>
-                @Html.CheckBox("Mensual")
-                @Html.Label("Mensual")
-                <input type="text" />
-            </p>
-            <p>
-                @Html.CheckBox("Anual")
-                @Html.Label("Anual")
-                <input type="text" />
-            </p>
-            <p>
-                <input type="submit" value="Registrar Producto" />
-               @* @Html.ActionLink("Back to List", "Index")*@
-            </p>
+            <div class="row" style="padding:5px 0 0 30px;">
+                <div class="col-md-2 form-group">
+                    @Html.LabelFor(model => model.Nombre)
+                    @Html.EditorFor(model => model.Nombre, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Nombre)
+                </div>
+
+                <div class="col-xs-3 form-group">
+                    <!-- espacio entre columnas-->
+                </div>
+
+                <div class="col-md-2 form-group">
+                    @Html.LabelFor(model => model.Creador)
+                    @Html.EditorFor(model => model.Creador, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Creador)
+                </div>
+            </div>
+            <div class="row" style="padding:5px 0 0 30px;">
+                <div class="col-md-2 form-group">
+                    @Html.LabelFor(model => model.Lenguaje)
+                    @Html.EditorFor(model => model.Lenguaje, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Lenguaje)
+                </div>
+
+                <div class="col-xs-3 form-group">
+                    <!-- espacio entre columnas-->
+                </div>
+
+                <div class="col-md-2 form-group">
+                    @Html.LabelFor(model => model.BaseDatos)
+                    @Html.EditorFor(model => model.BaseDatos, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.BaseDatos)
+                </div>
+            </div>
+            <div class="row" style="padding:5px 0 0 30px;">
+                <div class="col-md-2 form-group">
+                    @Html.LabelFor(model => model.Area)
+                    @Html.EditorFor(model => model.Area, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Area)
+                </div>
+
+                <div class="col-xs-3 form-group">
+                    <!-- espacio entre columnas-->
+                </div>
+
+                <div class="col-md-2 form-group">
+                    @Html.LabelFor(model => model.Funcion)
+                    @Html.EditorFor(model => model.Funcion, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Funcion)
+                </div>
+            </div>
+            <div class="row" style="padding:5px 0 0 30px;">
+                <div class="col-md-2 form-group">
+                    @Html.LabelFor(model => model.CapMaxConexiones)
+                    @Html.EditorFor(model => model.CapMaxConexiones, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.CapMaxConexiones)
+                </div>
+
+                <div class="col-xs-3 form-group">
+                    <!-- espacio entre columnas-->
+                </div>
+
+                <div class="col-md-2 form-group">
+                    @Html.LabelFor(model => model.Detalle)
+                    @Html.EditorFor(model => model.Detalle, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Detalle)
+                </div>
+            </div>
+            <div class="row" style="padding:5px 0 0 30px;">
+                <div class="col-md-2 form-group">
+                    @Html.Label("Usuario")
+                    @Html.CheckBox("Usuario")
+                    <input type="text" name="usuario" />
+                    <p></p>
+                    @Html.Label("Institucional")
+                    @Html.CheckBox("Institucional")
+                    <input type="text" name="institucional"/>
+                </div>
+
+                <div class="col-xs-3 form-group">
+                    <!-- espacio entre columnas-->
+                </div>
+
+                <div class="col-md-2 form-group">  
+                    @Html.Label("Mensual")
+                    @Html.CheckBox("Mensual")
+                    <input type="text" name="mensual" />
+                    <p></p>
+                    @Html.Label("Anual")
+                    @Html.CheckBox("Anual")
+                    <input type="text" name="anual" />
+                </div>
+            </div>
+            <div class="col-xs-11 form-group" style="padding:5px 0 0 30px;">
+                @Html.LabelFor(model => model.ImagenLogo)
+                <input type="file" class="form-control" name="Image" accept="image/*" />
+            </div>           
+            <div class="row" style="padding:5px 0 0 30px;">
+                <div class="col-md-2 form-group">
+                    <input type="submit" value="Registrar Producto" class="btn-primary" />
+                </div>
+
+                <div class="col-xs-3 form-group">
+                    <!-- espacio entre columnas-->
+                </div>
+
+                <div class="col-md-2 form-group">
+                    <p>
+                        @Html.ActionLink("Back to List", "Index", "Home")
+                    </p>
+                </div>
+            </div>
         }
     </div>
 </body>

@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Data.Entity;
+using System.IO;
 
 namespace VentaSoftware.Models
 {
-    public class VentaSoftwareInitializer:DropCreateDatabaseAlways<VentaSoftwareContext>
+    public class VentaSoftwareInitializer : DropCreateDatabaseIfModelChanges<VentaSoftwareContext>
     {
         protected override void Seed(VentaSoftwareContext context)
         {
@@ -16,6 +17,7 @@ namespace VentaSoftware.Models
             {
                 new Producto
                 {
+                    Id_producto=1,
                     Nombre="Kasperky",
                     Creador="Lab Kasperky",
                     Lenguaje="NA",
@@ -25,10 +27,12 @@ namespace VentaSoftware.Models
                     Detalle="Antivirus 2017",
                     CapMaxConexiones=0,
                     CapMaxBase=0,
-                    Estado=true
+                    Estado=true,
+                    ImagenLogo = getFileBytes("\\Images\\kaspersky.jpg")
                 },
                 new Producto
                 {
+                    Id_producto=2,
                     Nombre="Visual Studio 2017",
                     Creador="Microsoft",
                     Lenguaje="Visual Basic, C#, Asp Net",
@@ -38,9 +42,40 @@ namespace VentaSoftware.Models
                     Detalle="Programa de desarrollo de software",
                     CapMaxConexiones=0,
                     CapMaxBase=0,
-                    Estado=true
-                }
-            };          
+                    Estado=true,
+                    ImagenLogo = getFileBytes("\\Images\\VisualStudio.jpg")
+                },
+                new Producto
+                {
+                    Id_producto=3,
+                    Nombre="Teamviewer",
+                    Creador="Teamviewer GMBH",
+                    Lenguaje="NA",
+                    BaseDatos="NA",
+                    Area="Control Remoto",
+                    Funcion="Acceso remoto y soporte seguro",
+                    Detalle="TeamViewer conecta en todo el mundo",
+                    CapMaxConexiones=0,
+                    CapMaxBase=0,
+                    Estado=true,
+                    ImagenLogo = getFileBytes("\\Images\\TeamViewer.jpg")
+                },
+                 new Producto
+                {
+                    Id_producto=4,
+                    Nombre="Office 365",
+                    Creador="Microsoft",
+                    Lenguaje="NA",
+                    BaseDatos="NA",
+                    Area="Productividad",
+                    Funcion="Productividad, comunicación y colaboración",
+                    Detalle="Gracias a la eficacia puede reducir tiempo y costes",
+                    CapMaxConexiones=0,
+                    CapMaxBase=0,
+                    Estado=true,
+                    ImagenLogo = getFileBytes("\\Images\\Office365.jpg")
+                },
+            };
             productos.ForEach(s => context.Productos.Add(s));
             context.SaveChanges();
 
@@ -105,6 +140,17 @@ namespace VentaSoftware.Models
             };
             clientes.ForEach(s => context.Clientes.Add(s));
             context.SaveChanges();
-        }      
+        }
+
+        private byte[] getFileBytes(string path)
+        {
+            FileStream fileOnDisk = new FileStream(HttpRuntime.AppDomainAppPath + path, FileMode.Open);
+            byte[] fileBytes;
+            using (BinaryReader br = new BinaryReader(fileOnDisk))
+            {
+                fileBytes = br.ReadBytes((int)fileOnDisk.Length);
+            }
+            return fileBytes;
+        }
     }
 }

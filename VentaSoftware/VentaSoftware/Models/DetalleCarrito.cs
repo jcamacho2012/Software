@@ -2,11 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace VentaSoftware.Models
 {
+    [Table("Tb_DetalleCarrito")]
     public class DetalleCarrito
     {
+        [Key]
         public int IdDetalleCarrito { get; set; }
         public int IdCarritoCompra { get; set; }
         public int IdProducto { get; set; }

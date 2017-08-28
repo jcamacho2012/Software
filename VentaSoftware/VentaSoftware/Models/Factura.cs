@@ -2,11 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace VentaSoftware.Models
 {
+    [Table("Tb_Factura")]
     public class Factura
     {
+        [Key]
         public int Id_factura { get; set; }
         public string NumFactura { get; set; }
         public DateTime FechaFactura { get; set; }
